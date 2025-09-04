@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema( // accepts a object schema is details of use
     {
         name : String,
         username : String,
-        email : String
+        email : String,
     }
 )
 
