@@ -34,8 +34,8 @@ app.get("/read" , async (req , res)=> { // async to be put to nearest parent fun
 
 app.get("/delete" , async (req , res)=> { // async to be put to nearest parent function
     // let users = await userModel.find({username:"aryan"}) for individual read always returns an array and gives empty if one user is not present and it we use .findOne the it will give null findOne gives us object findOne always find the first user
-    let deletedusers = await userModel.findOneAndDelete()
-    res.send(deletedusers);
+    let deleteduser = await userModel.findOneAndDelete()
+    res.send(deleteduser);
 })
 
 
