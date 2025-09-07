@@ -2,6 +2,7 @@ const express = require("express")
 const app = express();
 const path = require("path")
 const userModel = require("./models/user");
+const user = require("./models/user");
 
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
@@ -19,6 +20,12 @@ app.get("/read" , async (req , res)=>{
     res.render("read" , {users});
     
 })
+
+app.get("/edit/:userid", async (req, res) => {
+    let user = await userModel.findOne({ _id: req.params.userid });
+    res.render("edit", { user });
+});
+
 
 
 app.get("/delete/:id" , async (req , res)=>{
